@@ -4,6 +4,8 @@ import ImageSpace from "../src/components/layout/ImageWithSpace"
 import H1 from "../src/components/typography/H1"
 import H2 from "../src/components/typography/H2"
 import H4 from "../src/components/typography/H4"
+import Input from "../src/components/input/Input"
+import Button from "../src/components/input/BUtton"
 
 const FormContainer = styled.div`
     margin-top: 60px;
@@ -23,13 +25,13 @@ function LoginPage () {
     return (
         <ImageSpace>
             <H1># Social Dev</H1>
-            <H4>Tudo que acontece nomundo Dev, esta aqui</H4>
+            <H4>Tudo que acontece nomundo Dev, está aqui!</H4>
             <FormContainer>
                 <H2>Entre em sua conta</H2>
                 <Form>
-                    <input placeholder="Email ou usuário" type="email" />
-                    <input placeholder="Senha" type="password" />
-                    <button>Entrar</button>
+                    <Input label="Email ou usuário" type="email"/>
+                    <Input label="Senha" type="password"/>
+                    <Button>Entrar</Button>
                 </Form>
                 <Text>Não possui uma conta? <a href="LINK">Faça seu cadastro</a></Text>
             </FormContainer>
