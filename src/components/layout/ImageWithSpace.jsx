@@ -34,7 +34,14 @@ const StyledContainer = styled.div`
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+
+    &:before, &:after {
+        content: ' ';
+        margin: auto;
+    }
 `
 
   function ImageSpace ({ children, image }) {
