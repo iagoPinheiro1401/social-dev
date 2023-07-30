@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
       a {
         color: ${props => props.theme.primary};
-        font-weigth: bold;
+        font-weight: bold;
         text-decoration: none;
       }
 
