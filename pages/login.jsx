@@ -26,7 +26,7 @@ function LoginPage () {
     return (
         <ImageSpace>
             <H1># Social Dev</H1>
-            <H4>Tudo que acontece nomundo Dev, está aqui!</H4>
+            <H4>Tudo que acontece no mundo Dev, está aqui!</H4>
             <FormContainer>
                 <H2>Entre em sua conta</H2>
                 <Form>
