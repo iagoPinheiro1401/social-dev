@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { object } from "joi"
 import { useForm } from "react-hook-form"
 import { joiResolver } from '@hookform/resolvers/joi'
 import styled from "styled-components"
@@ -12,6 +12,7 @@ import H2 from "../src/components/typography/H2"
 import H4 from "../src/components/typography/H4"
 import Input from "../src/components/input/Input"
 import Button from "../src/components/input/BUtton"
+import { urlObjectKeys } from "next/dist/shared/lib/utils"
 
 const FormContainer = styled.div`
     margin-top: 60px;
@@ -36,8 +37,6 @@ function SignupPage () {
         console.log(data)
     }
 
-    console.log(errors)
-
     return (
         <ImageSpace>
             <H1># Social Dev</H1>
@@ -45,12 +44,12 @@ function SignupPage () {
             <FormContainer>
                 <H2>Crie sua conta</H2>
                 <Form onSubmit={handleSubmit(handleForm)}>
-                    <Input label="Nome" {...register('firstName')} />
-                    <Input label="Sobrenome" {...register('lastName')}/>
-                    <Input label="Usuário" {...register('user')}/>
-                    <Input label="Email" {...register('email')}/>
-                    <Input label="Senha" {...register('password')}/>
-                    <Button type="submit">Cadastrar</Button>
+                    <Input label="Nome" {...register('firstName')} error={errors.firstName} />
+                    <Input label="Sobrenome" {...register('lastName')} error={errors.lastName} />
+                    <Input label="Usuário" {...register('user')} error={errors.user} />
+                    <Input label="Email" {...register('email')} error={errors.email} />
+                    <Input label="Senha" {...register('password')} error={errors.password} />
+                    <Button type="submit" disabled={Object.keys(errors).length > 0} >Cadastrar</Button>
                 </Form>
                 <Text>Já possui uma conta? <Link href="/login">Faça seu login</Link></Text>
             </FormContainer>
