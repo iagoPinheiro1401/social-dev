@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import H4 from "../typography/H4";
 import Textarea from "../input/Textarea"
-import Button from "../input/Button";
+import Button from "../input/BUtton";
 
 const PostContainer = styled.div`
     background-color: ${props => props.theme.white};
