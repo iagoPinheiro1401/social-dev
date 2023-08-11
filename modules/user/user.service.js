@@ -1,7 +1,7 @@
 
 import { hashPassword, comparePassword } from "../../utils/bcrypt"
 
-import User from '../user/user.model'
+const User = require('./user.model')
 
 export const signupUser = async (body) => {
     try {
@@ -15,6 +15,7 @@ export const signupUser = async (body) => {
         throw err
     }
 }
+for (let model in mongoose.models) delete mongoose.models[model]
 
 export const login = async (body) => {
     try {

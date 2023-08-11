@@ -8,4 +8,7 @@ const UserSchema = new mongoose.Schema ({
     password: { type: String, required: true},
 })
 
-export default mongoose.model.User || mongoose.model('User', UserSchema)
+for (let model in mongoose.models) delete mongoose.models[model]
+
+const User = mongoose.model.User || mongoose.model('User', UserSchema);
+module.exports = User;
