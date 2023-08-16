@@ -8,7 +8,7 @@ import { createPostSchema } from "../../../modules/post/post.schema";
 
 import H4 from "../typography/H4";
 import ControledTextarea from "../input/ControledTextarea";
-import Button from "../input/BUtton";
+import Button from "../input/Button";
 import useSWR from "swr";
 
 const PostContainer = styled.div`

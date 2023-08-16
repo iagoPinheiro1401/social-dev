@@ -12,7 +12,7 @@ import H1 from "../src/components/typography/H1"
 import H2 from "../src/components/typography/H2"
 import H4 from "../src/components/typography/H4"
 import Input from "../src/components/input/Input"
-import Button from "../src/components/input/BUtton"
+import Button from "../src/components/input/Button"
 
 const FormContainer = styled.div`
     margin-top: 60px;
