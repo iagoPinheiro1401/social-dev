@@ -65,7 +65,7 @@ const onSubmit = async (data) => {
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Input label="Email ou usuário" type="text" name="userOrEmail" control={control}/>
                     <Input label="Senha" type="password" name="password" control={control}/>
-                    <Button type="submit" disabled={Object.keys(errors).length > 0} >Entrar</Button>
+                    <Button type="submit" loading={true} disabled={Object.keys(errors).length > 0} >Entrar</Button>
                 </Form>
                 <Text>Não possui uma conta? <Link href="/signup">Faça seu cadastro</Link></Text>
             </FormContainer>
