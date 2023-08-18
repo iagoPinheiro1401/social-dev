@@ -1,4 +1,4 @@
-
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { joiResolver } from '@hookform/resolvers/joi'
 import styled from "styled-components"
@@ -35,13 +35,17 @@ function SignupPage () {
         resolver: joiResolver(signupSchema)
     })
 
+    const[isLoading, setIsLoading] = useState()
+
     const handleForm = async (data) => {
         try{
+            setIsLoading(true)
             const { status } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/user/signup`, data)
             if (status === 201) {
                 router.push('/')
             }
         } catch (err) {
+            setIsLoading(false)
             if (err.response.data.code === 11000) {
                 setError(err.response.data.duplicatedKey, {
                     type: 'duplicated'
@@ -62,7 +66,7 @@ function SignupPage () {
                     <Input label="Usuário" name="user" control={control} />
                     <Input label="Email" type="email" name="email" control={control} />
                     <Input label="Senha" type="passwowrd" name="password" control={control} />
-                    <Button type="submit" disabled={Object.keys(errors).length > 0} >Cadastrar</Button>
+                    <Button loading={isLoading} type="submit" disabled={Object.keys(errors).length > 0} >Cadastrar</Button>
                 </Form>
                 <Text>Já possui uma conta? <Link href="/login">Faça seu login</Link></Text>
             </FormContainer>

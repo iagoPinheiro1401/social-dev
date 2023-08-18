@@ -15,7 +15,6 @@ export const signupUser = async (body) => {
         throw err
     }
 }
-for (let model in mongoose.models) delete mongoose.models[model]
 
 export const login = async (body) => {
     try {
